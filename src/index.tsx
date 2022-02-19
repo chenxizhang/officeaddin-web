@@ -10,7 +10,7 @@ const instance = new PublicClientApplication({
       "https://login.microsoftonline.com/common"
   },
   cache: {
-    cacheLocation: "localStorage"//还可以设置为localStorage
+    cacheLocation: "sessionStorage"//还可以设置为localStorage
   }
 });
 
