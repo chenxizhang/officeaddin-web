@@ -42,7 +42,7 @@ const Home = () => {
 
 
       <button onClick={() => {
-        Office.context.ui.displayDialogAsync("https://nice-moss-06bb30900.1.azurestaticapps.net/#/login", { width: 400, height: 300 }, (result) => {
+        Office.context.ui.displayDialogAsync("https://nice-moss-06bb30900.1.azurestaticapps.net/#/login", { width: 40, height: 30 }, (result) => {
           const dialog = result.value;
           dialog.addEventHandler(Office.EventType.DialogMessageReceived, (message) => {
             alert(message);
