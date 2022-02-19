@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useMsal } from '@azure/msal-react';
 import { AccountInfo } from '@azure/msal-browser';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 
 const App = () => {
   return <Router>
@@ -40,7 +40,7 @@ const Home = () => {
 
 
       <button onClick={() => {
-        Office.context.ui.displayDialogAsync("https://nice-moss-06bb30900.1.azurestaticapps.net/login", {}, (result) => {
+        Office.context.ui.displayDialogAsync("https://nice-moss-06bb30900.1.azurestaticapps.net/#/login", {}, (result) => {
           const dialog = result.value;
           dialog.addEventHandler(Office.EventType.DialogMessageReceived, (message) => {
             alert(message);
