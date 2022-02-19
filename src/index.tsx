@@ -1,17 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { render } from "react-dom";
+import { PublicClientApplication } from "@azure/msal-browser";
+import { MsalProvider } from "@azure/msal-react";
+import App from "./App";
 
-ReactDOM.render(
-  <React.StrictMode>
+const instance = new PublicClientApplication({
+  auth: {
+    clientId: "07d03982-8b30-48cb-ae23-fcce0c041cca",
+    authority://如果是多租户应用，则为 /common
+      "https://login.microsoftonline.com/common"
+  },
+  cache: {
+    cacheLocation: "sessionStorage"//还可以设置为localStorage
+  }
+});
+
+const rootElement = document.getElementById("root");
+render(
+  <MsalProvider instance={instance}>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </MsalProvider>,
+  rootElement
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

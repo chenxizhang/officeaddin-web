@@ -12,7 +12,7 @@
     },
     "routes": [
         {
-            "route": "/*",
+            "route": "/test",
             "allowedRoles": [
                 "authenticated"
             ]

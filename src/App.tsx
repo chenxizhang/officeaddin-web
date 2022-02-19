@@ -1,24 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { useMsal } from '@azure/msal-react';
+import { AccountInfo } from '@azure/msal-browser';
 
 function App() {
+  const { instance } = useMsal();
+  const [account, setAccount] = useState<AccountInfo | null>();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <button onClick={() => {
+        instance.loginPopup().then(x => setAccount(x.account));
+      }}>登陆</button>
+
+
+      {account && <pre>{JSON.stringify(account)}</pre>}
     </div>
   );
 }
