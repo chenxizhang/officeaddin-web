@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { useMsal } from '@azure/msal-react';
 import { AccountInfo } from '@azure/msal-browser';
-import { HashRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 const App = () => {
-  return <HashRouter>
+  return <Router>
     <Switch>
       <Route path="/" exact component={Home}></Route>
       <Route path="/login" component={Login}></Route>
     </Switch>
-  </HashRouter>
+  </Router>
 }
 
 const Login = () => {
