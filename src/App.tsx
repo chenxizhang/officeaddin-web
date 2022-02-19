@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import { useMsal } from '@azure/msal-react';
 import { AccountInfo } from '@azure/msal-browser';
-import { BrowserRouter, Route } from "react-router-dom";
+import { HashRouter, Switch, Route } from "react-router-dom";
 
 const App = () => {
-  return <BrowserRouter>
-    <Route path='/' element={Home}></Route>
-    <Route path='/login' element={Login}></Route>
-  </BrowserRouter>
+  return <HashRouter>
+    <Switch>
+      <Route path="/" exact component={Home}></Route>
+      <Route path="/login" component={Login}></Route>
+    </Switch>
+  </HashRouter>
 }
 
 const Login = () => {
