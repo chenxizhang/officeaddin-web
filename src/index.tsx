@@ -17,6 +17,8 @@ const instance = new PublicClientApplication({
 const rootElement = document.getElementById("root");
 
 Office.onReady(() => {
+  console.log("app ready");
+
   render(
     <MsalProvider instance={instance}>
       <App />
