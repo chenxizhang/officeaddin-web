@@ -10,14 +10,17 @@ const instance = new PublicClientApplication({
       "https://login.microsoftonline.com/common"
   },
   cache: {
-    cacheLocation: "sessionStorage"//还可以设置为localStorage
+    cacheLocation: "localStorage"//还可以设置为localStorage
   }
 });
 
 const rootElement = document.getElementById("root");
-render(
-  <MsalProvider instance={instance}>
-    <App />
-  </MsalProvider>,
-  rootElement
-);
+
+Office.onReady(() => {
+  render(
+    <MsalProvider instance={instance}>
+      <App />
+    </MsalProvider>,
+    rootElement
+  );
+})
