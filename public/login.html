@@ -8,7 +8,7 @@
     <meta name="theme-color" content="#000000" />
     <meta name="description" content="Web site created using create-react-app" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
+    <script type="text/javascript" src="office.js"></script>
 
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -35,11 +35,15 @@
     <button id="back">返回</button>
 
     <script>
-
-        const button = document.getElementById("back");
-        button.addEventListener("click", function () {
+        Office.onReady(()=>{
+          console.log("ready");
+          const button = document.getElementById("back");
+          button.addEventListener("click", function () {
+            console.log("click the back button");
             Office.context.ui.messageParent("test");
+          })
         })
+
     </script>
 </body>
 
