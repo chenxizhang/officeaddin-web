@@ -40,7 +40,7 @@
       const button = document.getElementById("back");
       button.addEventListener("click", function () {
         console.log("click");
-        Office.context.ui.messageParent("test");
+        Office.context.ui.messageParent("test", { targetOrigin: "*" });
       })
     })
 
