@@ -17,7 +17,7 @@ const Login = () => {
 
   return <h1>Login
     <button onClick={() => {
-      Office.context.ui.messageParent("test");
+      Office.context.ui.messageParent("test", { targetOrigin: "*" });
     }}>提交</button>
 
   </h1>
