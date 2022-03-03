@@ -46,6 +46,7 @@ const Home = () => {
           const dialog = result.value;
           dialog.addEventHandler(Office.EventType.DialogMessageReceived, (message) => {
             console.log(message);
+            dialog.close();
           });
         })
       }}>弹出对话框</button>
