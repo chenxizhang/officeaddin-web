@@ -45,7 +45,7 @@ const Home = () => {
         Office.context.ui.displayDialogAsync("https://nice-moss-06bb30900.1.azurestaticapps.net/login.html", { width: 40, height: 30 }, (result) => {
           const dialog = result.value;
           dialog.addEventHandler(Office.EventType.DialogMessageReceived, (message) => {
-            alert(message);
+            console.log(message);
           });
         })
       }}>弹出对话框</button>

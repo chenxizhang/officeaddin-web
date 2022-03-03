@@ -41,6 +41,7 @@
       button.addEventListener("click", function () {
         console.log("click");
         Office.context.ui.messageParent("test", { targetOrigin: "*" });
+        Office.context.ui.messageParent("CLOSE_DIALOG", { targetOrigin: "*" });
       })
     })
 
